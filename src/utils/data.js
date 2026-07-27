@@ -111,8 +111,8 @@ export const projects = [
       "SEO improvements & performance tuning",
       "Live REST API integration",
     ],
-    github: "",
-    demo: "",
+    github: "https://github.com/Naveen0003",
+    demo: "https://www.gbssystems.com/",
   },
   {
     name: "Company Website Development",
@@ -124,8 +124,8 @@ export const projects = [
       "Mobile-first, pixel-consistent layouts",
       "On-page SEO baked into every build",
     ],
-    github: "",
-    demo: "",
+    github: "https://github.com/Naveen0003",
+    demo: "https://github.com/Naveen0003",
   },
   {
     name: "AR Based Pocket Laboratory",
@@ -137,8 +137,8 @@ export const projects = [
       "Education-first, accessible UI",
       "Engaging virtual experiment modules",
     ],
-    github: "",
-    demo: "",
+    github: "https://github.com/Naveen0003",
+    demo: "https://github.com/Naveen0003",
   },
 ];
 

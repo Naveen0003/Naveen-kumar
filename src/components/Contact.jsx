@@ -17,8 +17,25 @@ export default function Contact() {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState({ state: "idle", message: "" });
 
-  const onChange = (e) =>
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+  const onChange = (e) => {
+    const { name, value } = e.target;
+
+    // Name field: only letters and spaces allowed
+    if (name === "name") {
+      const lettersOnly = value.replace(/[^A-Za-z\s]/g, "");
+      setForm((f) => ({ ...f, name: lettersOnly }));
+      return;
+    }
+
+    // Phone field: only digits allowed
+    if (name === "phone") {
+      const digitsOnly = value.replace(/[^0-9]/g, "");
+      setForm((f) => ({ ...f, phone: digitsOnly }));
+      return;
+    }
+
+    setForm((f) => ({ ...f, [name]: value }));
+  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -106,7 +123,7 @@ export default function Contact() {
                 <FiLinkedin size={16} /> LinkedIn
               </a>
               <a
-                href={profile.github}
+                href="https://github.com/Naveen0003"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 glass rounded-2xl p-4 flex items-center justify-center gap-2 text-sm font-medium hover:-translate-y-1 transition-transform"
@@ -145,9 +162,12 @@ export default function Contact() {
             </div>
             <input
               name="phone"
+              type="tel"
+              inputMode="numeric"
               value={form.phone}
               onChange={onChange}
               placeholder="Phone number (optional)"
+              maxLength={15}
               className="w-full px-4 py-3 rounded-xl bg-transparent border border-[var(--border)] text-sm outline-none focus:border-blue-500 transition-colors"
             />
             <textarea
