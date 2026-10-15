@@ -1,13 +1,16 @@
 export const profile = {
   name: "Naveen Kumar R",
-  title: "React Frontend Developer",
+  title: "React Developer & SEO Specialist",
   location: "Chennai, Tamil Nadu, India",
   email: "naveenvi2001@gmail.com",
   phone: "+91 80564 53776",
   linkedin: "https://www.linkedin.com/in/naveen-kumar-rajendhiran-89219a181",
-  github: "https://github.com/naveenkumar-r",
+  github: "https://github.com/Naveen0003",
+  // TODO: Add Upwork and Fiverr links when ready
+  upwork: "", // [FILL]
+  fiverr: "", // [FILL]
   intro:
-    "React Frontend Developer with 2+ years of experience building responsive, high-performance web applications using React.js, JavaScript, HTML5, CSS3, REST APIs, and modern frontend technologies.",
+    "I build fast, responsive React websites and fix the SEO issues that keep them from being found on Google.",
 };
 
 export const stats = [
@@ -18,64 +21,41 @@ export const stats = [
 ];
 
 export const aboutPoints = [
-  "Passion for frontend development and clean, maintainable code",
-  "Responsive website development across devices and browsers",
-  "REST API integration for dynamic, data-driven interfaces",
-  "SEO and performance optimization for real-world impact",
-  "Effective collaboration with designers and backend teams",
-  "Continuous learning across the modern React ecosystem",
+  "I'm Naveen, a React developer and SEO specialist based in Chennai, India.",
+  "I help small businesses and startups get a fast website and fix the SEO issues that hold it back.",
+  "I work in your time zone when needed, reply within 24 hours and keep scope and pricing clear from day one.",
+  "[FILL: one personal or credibility line, such as degree or what drives you.]",
 ];
 
 export const skillGroups = [
   {
-    category: "Frontend",
+    category: "Development",
     skills: [
-      { name: "React.js", level: 90 },
+      { name: "React", level: 90 },
       { name: "JavaScript (ES6+)", level: 88 },
-      { name: "HTML5", level: 95 },
-      { name: "CSS3", level: 92 },
-    ],
-  },
-  {
-    category: "State Management",
-    skills: [
-      { name: "Redux", level: 78 },
-      { name: "Context API", level: 85 },
-    ],
-  },
-  {
-    category: "Styling",
-    skills: [
+      { name: "HTML", level: 95 },
+      { name: "CSS", level: 92 },
       { name: "Tailwind CSS", level: 88 },
-      { name: "Bootstrap", level: 85 },
-      { name: "Material UI", level: 75 },
-    ],
-  },
-  {
-    category: "API",
-    skills: [
-      { name: "REST API", level: 87 },
-      { name: "Axios", level: 82 },
-    ],
-  },
-  {
-    category: "Version Control",
-    skills: [
       { name: "Git", level: 85 },
       { name: "GitHub", level: 85 },
+      { name: "Vercel", level: 85 },
     ],
   },
   {
-    category: "Database",
-    skills: [{ name: "SQL", level: 70 }],
+    category: "SEO",
+    skills: [
+      { name: "Google Search Console", level: 85 },
+      { name: "Google Analytics", level: 80 },
+      { name: "PageSpeed Insights", level: 85 },
+      { name: "Screaming Frog", level: 75 },
+    ],
   },
   {
-    category: "Tools",
+    category: "Working Style",
     skills: [
-      { name: "VS Code", level: 95 },
-      { name: "Postman", level: 80 },
-      { name: "Chrome DevTools", level: 85 },
-      { name: "npm", level: 88 },
+      { name: "Clear Communication", level: 95 },
+      { name: "Milestone-based Delivery", level: 90 },
+      { name: "Written Scope", level: 95 },
     ],
   },
 ];
@@ -102,41 +82,46 @@ export const experience = [
 export const projects = [
   {
     name: "Laptop E-commerce Website",
-    stack: ["React.js", "JavaScript", "REST API", "Bootstrap"],
-    description:
-      "A fully responsive e-commerce platform for laptop sales with dynamic listings and real-time search.",
-    features: [
-      "Product listing & advanced filtering",
-      "Responsive UI across all devices",
-      "SEO improvements & performance tuning",
-      "Live REST API integration",
+    summary: "A fully responsive e-commerce platform for laptop sales with dynamic listings and real-time search.",
+    image: "image2.jpg",
+    problem: "[FILL: what the project needed to solve]",
+    work: [
+      "[FILL: Responsive layout implementation]",
+      "[FILL: API integration for product data]",
+      "[FILL: Advanced filtering functionality]",
     ],
+    result: "[FILL: Deployed live, loads in X seconds]",
+    tech: ["React.js", "JavaScript", "REST API", "Bootstrap"],
     github: "https://github.com/Naveen0003",
     demo: "https://www.gbssystems.com/",
   },
   {
     name: "Company Website Development",
-    stack: ["React.js", "Responsive Design", "SEO Optimization"],
-    description:
-      "Multiple business websites and landing pages taken from concept to production deployment.",
-    features: [
-      "Custom landing pages for business clients",
-      "Mobile-first, pixel-consistent layouts",
-      "On-page SEO baked into every build",
+    summary: "Multiple business websites and landing pages taken from concept to production deployment.",
+    image: "image3.jpg",
+    problem: "[FILL: what the project needed to solve]",
+    work: [
+      "[FILL: Design-to-React conversion]",
+      "[FILL: Mobile-first responsive layouts]",
+      "[FILL: SEO optimization implementation]",
     ],
+    result: "[FILL: Deployed live, loads in X seconds]",
+    tech: ["React.js", "Responsive Design", "SEO Optimization"],
     github: "https://github.com/Naveen0003",
     demo: "https://github.com/Naveen0003",
   },
   {
     name: "AR Based Pocket Laboratory",
-    stack: ["React.js", "Augmented Reality", "3D Visualization"],
-    description:
-      "An education-focused AR mobile app letting students run interactive 3D lab experiments.",
-    features: [
-      "Interactive 3D visualization",
-      "Education-first, accessible UI",
-      "Engaging virtual experiment modules",
+    summary: "An education-focused AR mobile app letting students run interactive 3D lab experiments.",
+    image: "image4.jpg",
+    problem: "[FILL: what the project needed to solve]",
+    work: [
+      "[FILL: 3D visualization implementation]",
+      "[FILL: Interactive experiment modules]",
+      "[FILL: Accessible UI design]",
     ],
+    result: "[FILL: what was delivered]",
+    tech: ["React.js", "Augmented Reality", "3D Visualization"],
     github: "https://github.com/Naveen0003",
     demo: "https://github.com/Naveen0003",
   },
@@ -155,3 +140,122 @@ export const education = [
     detail: "CGPA: 7.5",
   },
 ];
+
+export const services = [
+  {
+    icon: "code",
+    title: "React Frontend Development",
+    outcome: "A fast, mobile-friendly website your visitors enjoy using.",
+    bullets: [
+      "Responsive business websites and landing pages",
+      "Design-to-React conversion",
+      "API integration",
+    ],
+  },
+  {
+    icon: "search",
+    title: "Technical & On-Page SEO",
+    outcome: "Fix the issues that stop Google from understanding your site.",
+    bullets: [
+      "Site audit with a clear action list",
+      "Titles, meta, headings, canonical, sitemap",
+      "Page speed and indexing checks",
+    ],
+  },
+  {
+    icon: "map-pin",
+    title: "Local SEO",
+    outcome: "Show up when nearby customers search for your service.",
+    bullets: [
+      "Google Business Profile support",
+      "Local landing pages",
+      "Local keyword research and citation plan",
+    ],
+  },
+  {
+    icon: "link",
+    title: "Link Building & Outreach",
+    outcome: "Earn relevant, quality links through real outreach.",
+    bullets: [
+      "Prospect research and quality checks",
+      "Personalized outreach",
+      "Monthly report with published URLs",
+    ],
+  },
+];
+
+export const workProcess = [
+  {
+    step: 1,
+    title: "Discuss",
+    description: "We talk about your goal, audience and budget.",
+  },
+  {
+    step: 2,
+    title: "Plan",
+    description: "I send a clear scope, timeline and price.",
+  },
+  {
+    step: 3,
+    title: "Build",
+    description: "I work in milestones and share previews.",
+  },
+  {
+    step: 4,
+    title: "Deliver",
+    description: "I test everything, hand over files or a report, and support you after launch.",
+  },
+];
+
+export const faqs = [
+  {
+    question: "What services do you offer?",
+    answer: "React website development, technical SEO, local SEO and link-building support.",
+  },
+  {
+    question: "Do you guarantee rankings?",
+    answer: "No. Nobody honestly can. I improve the technical and content factors that influence rankings and report progress clearly.",
+  },
+  {
+    question: "How long does a project take?",
+    answer: "A landing page usually takes [FILL] days and a business website [FILL] days. I confirm the timeline before starting.",
+  },
+  {
+    question: "How do payments work?",
+    answer: "Through the freelance platform or in milestones with a written agreement. I never ask you to pay outside agreed terms.",
+  },
+  {
+    question: "Which time zone do you work in?",
+    answer: "India Standard Time (UTC+5:30), with overlap hours available for US and UK clients [FILL: exact overlap hours].",
+  },
+  {
+    question: "Do you offer monthly support?",
+    answer: "Yes. Monthly maintenance and SEO plans are available when they are genuinely useful for your site.",
+  },
+];
+
+export const seoCaseStudy = {
+  title: "SEO Case Study: Fixing My Own Portfolio",
+  problem: "The canonical URL pointed to a different address, the page title described only React development, the social preview image used a relative path, and the page content needed to be checked for search-engine visibility.",
+  whatChecked: "Page source, canonical and Open Graph tags, Google PageSpeed Insights, Google Search Console indexing, sitemap and robots files.",
+  whatChanged: "One consistent URL for canonical and social tags | New title and description | Absolute social image URL | Added sitemap, robots file and structured data | [FILL: any extra fixes]",
+};
+
+export const linkBuildingSample = {
+  title: "How I Approach Link Building",
+  steps: [
+    "Research the niche and target pages",
+    "Shortlist relevant sites and check quality",
+    "Personalized outreach",
+    "Track and report",
+  ],
+  qualityChecklist: [
+    "Relevant topic",
+    "Real audience",
+    "Editorial context",
+    "No obvious spam",
+    "Not a paid-link network",
+  ],
+  trackerColumns: [],
+  sampleReport: "", // [FILL: optional PDF link]
+};

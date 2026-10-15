@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { FiCheckCircle } from "react-icons/fi";
 import { aboutPoints, stats } from "../utils/data";
 import Counter from "./Counter";
 
@@ -17,12 +16,12 @@ export default function About() {
             About Me
           </span>
           <h2 className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl mt-3 mb-10">
-            Frontend-focused, product-minded.
+            Who I am
           </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          <motion.ul
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
@@ -30,12 +29,11 @@ export default function About() {
             className="space-y-4"
           >
             {aboutPoints.map((point) => (
-              <li key={point} className="flex items-start gap-3">
-                <FiCheckCircle className="text-blue-500 mt-0.5 shrink-0" />
-                <span className="text-[var(--text-muted)]">{point}</span>
-              </li>
+              <p key={point} className="text-[var(--text-muted)] leading-relaxed">
+                {point}
+              </p>
             ))}
-          </motion.ul>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

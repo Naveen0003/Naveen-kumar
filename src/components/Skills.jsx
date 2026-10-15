@@ -1,23 +1,11 @@
 import { motion } from "framer-motion";
-import {
-  FiCode,
-  FiLayers,
-  FiFeather,
-  FiGlobe,
-  FiGitBranch,
-  FiDatabase,
-  FiTool,
-} from "react-icons/fi";
+import { FiCode, FiSearch, FiMessageSquare } from "react-icons/fi";
 import { skillGroups } from "../utils/data";
 
 const icons = {
-  Frontend: FiCode,
-  "State Management": FiLayers,
-  Styling: FiFeather,
-  API: FiGlobe,
-  "Version Control": FiGitBranch,
-  Database: FiDatabase,
-  Tools: FiTool,
+  Development: FiCode,
+  SEO: FiSearch,
+  "Working Style": FiMessageSquare,
 };
 
 export default function Skills() {
@@ -38,7 +26,7 @@ export default function Skills() {
           </h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {skillGroups.map((group, gi) => {
             const Icon = icons[group.category] || FiCode;
             return (

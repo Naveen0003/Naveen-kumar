@@ -1,52 +1,9 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FiDownload, FiMail, FiArrowRight, FiCode } from "react-icons/fi";
+import { FiCode } from "react-icons/fi";
 import { profile } from "../utils/data";
 import image1 from "../assets/images/image1.jpg";
 
-const roles = [
-  "React Frontend Developer",
-  "UI Engineer",
-  "REST API Integrator",
-  "Performance Optimizer",
-];
-
-const stack = ["React", "Tailwind", "Node.js", "REST API"];
-
-function useTypingEffect(words, speed = 90, pause = 1400) {
-  const [text, setText] = useState("");
-  const [wordIndex, setWordIndex] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const current = words[wordIndex % words.length];
-    let timeout;
-
-    if (!deleting && text.length < current.length) {
-      timeout = setTimeout(
-        () => setText(current.slice(0, text.length + 1)),
-        speed
-      );
-    } else if (!deleting && text.length === current.length) {
-      timeout = setTimeout(() => setDeleting(true), pause);
-    } else if (deleting && text.length > 0) {
-      timeout = setTimeout(
-        () => setText(current.slice(0, text.length - 1)),
-        speed / 2
-      );
-    } else if (deleting && text.length === 0) {
-      setDeleting(false);
-      setWordIndex((i) => i + 1);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [text, deleting, wordIndex, words, speed, pause]);
-
-  return text;
-}
-
 export default function Hero() {
-  const typed = useTypingEffect(roles);
 
   const scrollTo = (href) =>
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
@@ -92,57 +49,31 @@ export default function Hero() {
           </span>
 
           <h1 className="font-[var(--font-display)] font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.08] mb-4">
-            Hi, I'm <span className="gradient-text">{profile.name}</span>
+            React Developer & SEO Specialist for Growing Businesses
           </h1>
-
-          <div className="h-9 mb-6">
-            <span className="font-mono text-lg sm:text-xl text-[var(--text-muted)]">
-              {typed}
-              <span className="inline-block w-[2px] h-5 bg-blue-700 ml-1 align-middle animate-pulse" />
-            </span>
-          </div>
 
           <p className="text-[var(--text-muted)] text-base sm:text-lg max-w-xl mb-8 leading-relaxed">
             {profile.intro}
           </p>
 
-          {/* tech chips */}
-          <div className="flex flex-wrap gap-2 mb-10">
-            {stack.map((tech) => (
-              <span
-                key={tech}
-                className="text-xs font-medium px-3 py-1.5 rounded-full border border-[var(--border)] text-[var(--text-muted)] hover:border-blue-500 hover:text-blue-500 transition-colors"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="/resume.pdf"
-              download
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full gradient-bg text-white font-medium text-sm hover:opacity-90 hover:scale-[1.03] transition-all shadow-lg shadow-blue-500/20"
-            >
-              <FiDownload size={16} /> Download Resume
-            </a>
+          <div className="flex flex-wrap gap-4 mb-10">
             <button
               onClick={() => scrollTo("#contact")}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass font-medium text-sm hover:scale-[1.03] transition-transform"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full gradient-bg text-white font-medium text-sm hover:opacity-90 hover:scale-[1.03] transition-all shadow-lg shadow-blue-500/20"
             >
-              <FiMail size={16} /> Contact Me
+              Get a Free Website Audit
             </button>
             <button
               onClick={() => scrollTo("#projects")}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--border)] font-medium text-sm hover:border-blue-500 transition-colors group"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass font-medium text-sm hover:scale-[1.03] transition-transform"
             >
-              View Projects{" "}
-              <FiArrowRight
-                size={16}
-                className="group-hover:translate-x-1 transition-transform"
-              />
+              View My Work
             </button>
           </div>
+
+          <p className="text-xs text-[var(--text-muted)] font-mono">
+            2+ years of experience | React, JavaScript, Technical SEO | Replies within 24 hours | Working with clients in US, UK and beyond
+          </p>
         </motion.div>
 
         <motion.div
@@ -162,8 +93,10 @@ export default function Hero() {
           <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-110 md:h-96 rounded-[2rem] glass flex items-center justify-center overflow-hidden">
             <motion.img
               src={image1}
-              alt={`${profile.name} illustration, coding at a desk`}
+              alt={`${profile.name} - React Developer and SEO Specialist`}
               className="w-[100%] h-auto object-contain"
+              width={384}
+              height={384}
               animate={{
                 y: [0, -12, 0],
                 rotate: [0, 2, 0, -2, 0],

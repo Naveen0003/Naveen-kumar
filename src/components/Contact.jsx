@@ -11,7 +11,7 @@ import {
 import { profile } from "../utils/data";
 import { sendContactMessage } from "../services/emailService";
 
-const initialForm = { name: "", email: "", phone: "", message: "" };
+const initialForm = { name: "", email: "", phone: "", website: "", service: "", message: "" };
 
 export default function Contact() {
   const [form, setForm] = useState(initialForm);
@@ -64,9 +64,12 @@ export default function Contact() {
           <span className="font-mono text-xs text-blue-500 uppercase tracking-wider">
             Contact
           </span>
-          <h2 className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl mt-3 mb-12">
-            Let's build something worth shipping
+          <h2 className="font-[var(--font-display)] font-bold text-3xl sm:text-4xl mt-3 mb-4">
+            Let's talk about your project
           </h2>
+          <p className="text-[var(--text-muted)] mb-12">
+            Tell me what you need and I'll reply within 24 hours with next steps. The first audit conversation is free.
+          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10">
@@ -113,23 +116,43 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="flex gap-3 pt-2">
+            <div className="grid grid-cols-2 gap-3 pt-2">
               <a
                 href={profile.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 glass rounded-2xl p-4 flex items-center justify-center gap-2 text-sm font-medium hover:-translate-y-1 transition-transform"
+                className="glass rounded-2xl p-4 flex items-center justify-center gap-2 text-sm font-medium hover:-translate-y-1 transition-transform"
               >
                 <FiLinkedin size={16} /> LinkedIn
               </a>
               <a
-                href="https://github.com/Naveen0003"
+                href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 glass rounded-2xl p-4 flex items-center justify-center gap-2 text-sm font-medium hover:-translate-y-1 transition-transform"
+                className="glass rounded-2xl p-4 flex items-center justify-center gap-2 text-sm font-medium hover:-translate-y-1 transition-transform"
               >
                 <FiGithub size={16} /> GitHub
               </a>
+              {profile.upwork && (
+                <a
+                  href={profile.upwork}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass rounded-2xl p-4 flex items-center justify-center gap-2 text-sm font-medium hover:-translate-y-1 transition-transform"
+                >
+                  Upwork
+                </a>
+              )}
+              {profile.fiverr && (
+                <a
+                  href={profile.fiverr}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass rounded-2xl p-4 flex items-center justify-center gap-2 text-sm font-medium hover:-translate-y-1 transition-transform"
+                >
+                  Fiverr
+                </a>
+              )}
             </div>
           </motion.div>
 
@@ -163,13 +186,33 @@ export default function Contact() {
             <input
               name="phone"
               type="tel"
-              inputMode="numeric"
               value={form.phone}
               onChange={onChange}
               placeholder="Phone number (optional)"
-              maxLength={15}
               className="w-full px-4 py-3 rounded-xl bg-transparent border border-[var(--border)] text-sm outline-none focus:border-blue-500 transition-colors"
             />
+            <input
+              name="website"
+              type="url"
+              value={form.website}
+              onChange={onChange}
+              placeholder="Website URL (optional)"
+              className="w-full px-4 py-3 rounded-xl bg-transparent border border-[var(--border)] text-sm outline-none focus:border-blue-500 transition-colors"
+            />
+            <select
+              name="service"
+              value={form.service}
+              onChange={onChange}
+              required
+              className="w-full px-4 py-3 rounded-xl bg-transparent border border-[var(--border)] text-sm outline-none focus:border-blue-500 transition-colors"
+            >
+              <option value="">What do you need?</option>
+              <option value="React development">React development</option>
+              <option value="SEO audit">SEO audit</option>
+              <option value="Local SEO">Local SEO</option>
+              <option value="Link building">Link building</option>
+              <option value="Other">Other</option>
+            </select>
             <textarea
               required
               name="message"

@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://naveen-portfolio.vercel.app/sitemap.xml
+Sitemap: [FINAL_URL]/sitemap.xml

@@ -2,70 +2,76 @@ import { FiLinkedin, FiGithub } from "react-icons/fi";
 import { profile } from "../utils/data";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-  const githubUrl = "https://github.com/Naveen0003";
-
   const scrollTo = (href) =>
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
 
+  const links = [
+    { label: "Services", href: "#services" },
+    { label: "Projects", href: "#projects" },
+    { label: "Case Study", href: "#case-study" },
+    { label: "Process", href: "#process" },
+    { label: "FAQ", href: "#faq" },
+    { label: "Contact", href: "#contact" },
+  ];
+
   return (
     <footer className="border-t border-[var(--border)] py-12">
-      <div className="section-container grid grid-cols-1 sm:grid-cols-3 items-center gap-6">
-        <div className="text-center sm:text-left">
-          <p className="font-[var(--font-display)] font-bold text-xl sm:text-2xl">
-            {profile.name}
-          </p>
-          <p className="text-xs text-[var(--text-muted)] mt-1">
-            {profile.title}
-          </p>
+      <div className="section-container">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <p className="font-[var(--font-display)] font-bold text-xl sm:text-2xl mb-2">
+              {profile.name}
+            </p>
+            <p className="text-sm text-[var(--text-muted)]">
+              {profile.title}
+            </p>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-4">Navigation</h3>
+            <ul className="space-y-2">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <button
+                    onClick={() => scrollTo(link.href)}
+                    className="text-sm text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-4">Connect</h3>
+            <div className="flex gap-3">
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-9 h-9 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform"
+              >
+                <FiLinkedin size={15} />
+              </a>
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="w-9 h-9 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform"
+              >
+                <FiGithub size={15} />
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="flex justify-center gap-6 text-sm text-[var(--text-muted)]">
-          <button onClick={() => scrollTo("#experience")} className="hover:text-[var(--text)]">
-            Experience
-          </button>
-          <button onClick={() => scrollTo("#projects")} className="hover:text-[var(--text)]">
-            Projects
-          </button>
-          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">
-            LinkedIn
-          </a>
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[var(--text)] inline-flex items-center gap-1.5"
-          >
-            <FiGithub size={14} />
-            GitHub
-          </a>
-        </div>
-
-        <div className="flex justify-center sm:justify-end gap-3">
-          <a
-            href={profile.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="w-9 h-9 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform"
-          >
-            <FiLinkedin size={15} />
-          </a>
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="w-9 h-9 rounded-full glass flex items-center justify-center hover:scale-110 transition-transform"
-          >
-            <FiGithub size={15} />
-          </a>
-        </div>
+        <p className="text-center text-xs text-[var(--text-muted)] font-mono pt-8 border-t border-[var(--border)]">
+          © 2026 {profile.name}. All rights reserved.
+        </p>
       </div>
-
-      <p className="text-center text-xs text-[var(--text-muted)] font-mono mt-8">
-        © {year} {profile.name}. All rights reserved.
-      </p>
     </footer>
   );
 }

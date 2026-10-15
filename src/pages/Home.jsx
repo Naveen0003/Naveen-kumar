@@ -1,22 +1,26 @@
 import Hero from "../components/Hero";
-import About from "../components/About";
-import Experience from "../components/Experience";
-import Skills from "../components/Skills";
+import Services from "../components/Services";
 import Projects from "../components/Projects";
-import Credentials from "../components/Credentials";
-import Resume from "../components/Resume";
+import SeoCaseStudy from "../components/SeoCaseStudy";
+import LinkBuilding from "../components/LinkBuilding";
+import Skills from "../components/Skills";
+import About from "../components/About";
+import WorkProcess from "../components/WorkProcess";
+import FAQ from "../components/FAQ";
 import Contact from "../components/Contact";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Experience />
-      <Skills />
+      <Services />
       <Projects />
-      <Credentials />
-      <Resume />
+      <SeoCaseStudy />
+      <LinkBuilding />
+      <Skills />
+      <About />
+      <WorkProcess />
+      <FAQ />
       <Contact />
     </>
   );

@@ -4,12 +4,11 @@ import { useTheme } from "../context/ThemeContext";
 import image11 from "../assets/images/image11.png";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
+  { label: "Services", href: "#services" },
   { label: "Projects", href: "#projects" },
-  { label: "Resume", href: "#resume" },
+  { label: "Case Study", href: "#case-study" },
+  { label: "Process", href: "#process" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -42,12 +41,10 @@ export default function Navbar() {
           onClick={(e) => handleClick(e, "#home")}
           className="relative flex items-center group"
         >
-          {/* soft glow behind logo */}
-          <span className="absolute -inset-2 rounded-full bg-blue-500/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <img
             src={image11}
-            alt="NK Logo"
-            className="relative h-14 w-14 sm:h-16 sm:w-16 object-contain drop-shadow-[0_0_12px_rgba(59,130,246,0.5)] group-hover:scale-105 transition-transform duration-300"
+            alt="Naveen Kumar Logo"
+            className="h-12 w-auto object-contain"
           />
         </a>
 
@@ -74,6 +71,12 @@ export default function Navbar() {
             {theme === "dark" ? <FiSun size={16} /> : <FiMoon size={16} />}
           </button>
           <button
+            onClick={(e) => handleClick(e, "#contact")}
+            className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-full gradient-bg text-white font-medium text-sm hover:opacity-90 transition-opacity"
+          >
+            Hire Me
+          </button>
+          <button
             className="md:hidden w-9 h-9 rounded-full flex items-center justify-center glass"
             onClick={() => setOpen((o) => !o)}
             aria-label="Toggle menu"
@@ -97,6 +100,14 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
+            <li className="pt-2">
+              <button
+                onClick={(e) => handleClick(e, "#contact")}
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full gradient-bg text-white font-medium text-sm hover:opacity-90 transition-opacity"
+              >
+                Hire Me
+              </button>
+            </li>
           </ul>
         </div>
       )}
